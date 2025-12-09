@@ -4,15 +4,207 @@
     --red:#EF233C;
     --withe:#FAFAFA;
 }
-
-
-*{
-    padding: 0;
+/* --------- RESET SUAU --------- */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-img{
-    width: 15%;
+body {
+    background: #f5f5f5;
+    color: #222;
 }
+
+/* --------- HEADER --------- */
+header {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+header img {
+    height: 50px;
+}
+
+header nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+}
+
+header input[type="search"] {
+    flex-grow: 1;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+header .icons a {
+    font-size: 22px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* --------- GENERALS --------- */
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+/* --------- CARRUSEL --------- */
+.carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carrusel img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.carrusel button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* --------- GRID PRODUCTES --------- */
+.productes-grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.productes-grid article {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.productes-grid img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+/* --------- CARRET --------- */
+.carret-llista article {
+    background: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border: 1px solid #ddd;
+}
+
+.carret-llista img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.total {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.total button {
+    margin-top: 10px;
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: none;
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
+
+/* --------- CERCA RESULTATS --------- */
+.resultats {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.resultats article {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.resultats img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+/* --------- FORMULARIS --------- */
+form {
+    background: #fff;
+    padding: 20px;
+    max-width: 350px;
+    margin: auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
 
 

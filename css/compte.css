@@ -1,0 +1,81 @@
+/* -------- RESET -------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f3f3f3;
+    color: #222;
+}
+
+/* -------- HEADER -------- */
+header {
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+header img {
+    height: 60px;
+}
+
+/* -------- FORMULARI -------- */
+main {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    background: white;
+    padding: 25px;
+    width: 320px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+main p {
+    text-align: center;
+    margin-top: 12px;
+}
+
+main a {
+    color: #222;
+    font-weight: bold;
+}
+
+/* -------- FOOTER -------- */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}

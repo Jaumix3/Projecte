@@ -1,0 +1,84 @@
+/* -------- RESET -------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f3f3f3;
+    color: #222;
+}
+
+/* -------- HEADER -------- */
+header {
+    padding: 15px 20px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header img {
+    height: 50px;
+}
+
+header input[type="search"] {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* -------- CARRET -------- */
+main {
+    padding: 25px;
+}
+
+.carret-llista article {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.carret-llista img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.total {
+    margin-top: 25px;
+    background: white;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.total button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* -------- FOOTER -------- */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}

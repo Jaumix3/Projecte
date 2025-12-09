@@ -1,22 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pàgina principal</title>
+    <title>Pàgina principal - JJ'S Sound Systems</title>
     <link rel="stylesheet" href="../css/style.css">
+
 </head>
+
 <body>
     <header>
-        <img src="../assets/img/logo.png">
-        <a src="./formulari.html">Iniciar Sessió</a>
+        <a href="./index.html">
+        <img src="../assets/img/logo.png" alt="Logo JJ'S Sound Systems">
+        </a>
+
+        <nav>
+            <a href="./index.html">Inici</a>
+            <a href="./formulari.html">Compte</a>
+        </nav>
+
+        <input type="search" placeholder="Cerca..." name="cerca">
+
+        <div class="icons">
+            <a href="./carret.html">🛒</a>
+            <a href="./formulari.html">👤</a>
+        </div>
     </header>
+
+
     <main>
         <section>
-    
+            <h2>Novetats</h2>
+
+            <div class="carrusel">
+                <button>◀</button>
+                <img src="../assets/img/novetat1.jpg" alt="Novetat">
+                <button>▶</button>
+            </div>
         </section>
-    </main>.
+
+        <section>
+            <h2>Productes destacats i merchandaissing</h2>
+
+            <div class="productes-grid">
+
+                <article>
+                    <img src="../assets/img/prod1.jpg" alt="Producte 1">
+                    <h3>Nom producte</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 49,99€</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <img src="../assets/img/prod2.jpg" alt="Producte 2">
+                    <h3>Nom producte</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 89,99€</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <img src="../assets/img/prod3.jpg" alt="Producte 3">
+                    <h3>Nom producte</h3>
+                    <ul>
+                        <li>Stock: esgotat</li>
+                        <li>Preu: 129,99€</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <img src="../assets/img/prod4.jpg" alt="Producte 4">
+                    <h3>Nom producte</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 59,99€</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
     <footer>
-    </footer>    
+        <a href="">Sobre nosaltres ·</a> 
+        <a href="">Contacte ·</a>
+        <a href="">Política de privacitat</a>
+    </footer>
 </body>
 </html>

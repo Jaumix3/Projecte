@@ -1,0 +1,98 @@
+/* -------- RESET -------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f2f2f2;
+    color: #222;
+}
+
+/* -------- HEADER -------- */
+header {
+    padding: 20px 25px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+header img {
+    height: 60px;
+    cursor: pointer;
+}
+
+/* -------- FORMULARI -------- */
+main {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+form {
+    background: white;
+    padding: 35px 30px;
+    width: 360px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px;
+    font-size: 16px;
+    background: #222;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.1s ease;
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+p a {
+    color: #222;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
