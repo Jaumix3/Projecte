@@ -206,5 +206,28 @@ footer {
     border-top: 1px solid #ddd;
 }
 
+a{
+    text-decoration: none;
+    color: #222;
+}
 
+/* -------- CERCA VISUAL -------- */
 
+/* Productes normals */
+.productes-grid article {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.productes-grid article.filtrat {
+    opacity: 0.25;
+    transform: scale(0.98);
+    pointer-events: none;
+}
+
+/* Productes que coincideixen */
+.productes-grid article.actiu {
+    opacity: 1;
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #000;
+}

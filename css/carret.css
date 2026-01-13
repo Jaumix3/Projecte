@@ -11,6 +11,13 @@ body {
     color: #222;
 }
 
+a{
+    text-decoration: none;
+    color: #222;
+}
+
+
+
 /* -------- HEADER -------- */
 header {
     padding: 15px 20px;
