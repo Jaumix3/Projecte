@@ -1,28 +1,31 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('loginForm');
+  if (!form) return;
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
+    const email = document.getElementById('email')?.value?.trim();
+    const password = document.getElementById('password')?.value;
 
-        const usuariGuardat = JSON.parse(localStorage.getItem("usuari"));
+    if (!email || !password) {
+      alert('Completa el correu i la contrasenya.');
+      return;
+    }
 
-        if (!usuariGuardat) {
-            alert("No hi ha cap usuari registrat");
-            return;
-        }
+    try {
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      alert('Sessió iniciada.');
+      window.location.href = './index.html';
+    } catch (err) {
+      console.error(err);
+      alert('Error iniciant sessió: ' + (err.message || err));
+    }
+  });
 
-        if (
-            email === usuariGuardat.email &&
-            password === usuariGuardat.password
-        ) {
-            localStorage.setItem("sessio", "iniciada");
-            alert("Sessió iniciada correctament");
-            window.location.href = "index.html";
-        } else {
-            alert("Email o contrasenya incorrectes");
-        }
-    });
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      console.log('Usuari ja autenticat:', user.email);
+    }
+  });
 });

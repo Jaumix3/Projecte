@@ -14,9 +14,8 @@
             <img src="../assets/img/logo.png" alt="Logo" class="logo">
         </a>
     </header>
-    <script src="../js/registre.js"></script>
     <main>
-        <form action="#" method="POST">
+        <form id="registerForm" action="#" method="POST">
             <h2>Crear un compte</h2>
             <label for="nom">Nom complet</label> 
         
@@ -40,6 +39,12 @@
     <footer>
         <p>&copy; JJ'S Sound Systems</p>
     </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/account-menu.js"></script>
+    <script src="../js/registre.js"></script>
 
 </body>
 </html>

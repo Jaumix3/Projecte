@@ -38,6 +38,48 @@ header nav a {
     color: #333;
 }
 
+/* Account menu injected into the header */
+.account-menu {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.account-menu .account-name {
+    font-weight: 700;
+    color: var(--black);
+    max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.account-menu a {
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: #f3f4f6;
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.account-menu a#menuSignOut {
+    background: #ef4444;
+    color: #fff;
+}
+
+/* Make header layout a bit more balanced */
+header {
+    padding: 14px 24px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 header input[type="search"] {
     flex-grow: 1;
     padding: 6px 10px;

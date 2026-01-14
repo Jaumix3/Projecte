@@ -6,7 +6,6 @@
     <title>Iniciar sessió</title>
     <link rel="stylesheet" href="../css/compte.css">
 </head>
-<script src="../js/login.js"></script>
 <body>
 
     <header>
@@ -16,16 +15,15 @@
     </header>
 
     <main>
-        <script src="../js/registre.js"></script>
         <h1>Iniciar sessió</h1> <br>
 
-        <form>
+        <form id="loginForm">
 
-            <label>Correu electrònic</label>
-            <input type="email" required>
+            <label for="email">Correu electrònic</label>
+            <input id="email" type="email" required>
 
-            <label>Contrasenya</label>
-            <input type="password" required>
+            <label for="password">Contrasenya</label>
+            <input id="password" type="password" required>
 
             <button type="submit">Entrar</button>
 
@@ -40,5 +38,11 @@
         <a href="">Política de privacitat</a>
     </footer>
 
-</body>
-</html>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+        <script src="../js/firebase-config.js"></script>
+        <script src="../js/account-menu.js"></script>
+        <script src="../js/login.js"></script>
+
+    </body>
+    </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>El meu compte</title>
+  <link rel="stylesheet" href="../css/compte.css">
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="../assets/img/logo.png" alt="Logo" class="logo">
+    </a>
+  </header>
+
+  <main>
+    <h1>Configuració de compte</h1>
+
+    <section>
+      <h2>Dades personals</h2>
+      <form id="profileForm">
+        <label for="displayName">Nom</label>
+        <input id="displayName" type="text">
+
+        <label for="age">Edat</label>
+        <input id="age" type="number" min="0">
+
+        <button type="submit">Guardar</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Canviar contrasenya</h2>
+      <form id="passwordForm">
+        <label for="currentPassword">Contrasenya actual</label>
+        <input id="currentPassword" type="password" required>
+
+        <label for="newPassword">Nova contrasenya</label>
+        <input id="newPassword" type="password" required>
+
+        <button type="submit">Canviar contrasenya</button>
+      </form>
+    </section>
+
+    <section>
+      <button id="signOutBtn">Tancar sessió</button>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/account.js"></script>
+</body>
+</html>
