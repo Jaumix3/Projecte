@@ -3,18 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const passwordForm = document.getElementById('passwordForm');
   const signOutBtn = document.getElementById('signOutBtn');
 
-  // Require auth
   firebase.auth().onAuthStateChanged(async (user) => {
     if (!user) {
-      // Not logged in → redirect to login
       window.location.href = './formulari.html';
       return;
     }
 
-    // Populate profile fields
     document.getElementById('displayName').value = user.displayName || '';
 
-    // Try to load extra profile fields from Firestore if available
     if (typeof db !== 'undefined' && db) {
       try {
         const doc = await db.collection('users').doc(user.uid).get();
@@ -46,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof db !== 'undefined' && db) {
           await db.collection('users').doc(user.uid).set({ age }, { merge: true });
         } else {
-          // fallback: store in localStorage
           localStorage.setItem('user_extra_' + user.uid, JSON.stringify({ age }));
         }
 
