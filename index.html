@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pàgina principal - JJ'S Sound Systems</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/stock-styling.js"></script>
+    <script src="./js/carrito.js"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/product-nav.js"></script>
+</head>
+<script src="./js/cerca.js"></script>
+<body>
+    <header>
+        <a href="./index.html">
+        <img src="./assets/img/logo.png" alt="Logo JJ'S Sound Systems">
+        </a>
+
+        <nav>
+            <a href="./index.html">Inici</a>
+        </nav>
+
+        <input type="search" id="cerca" placeholder="Cerca...">
+
+        <div class="icons">
+            <a href="./views/carret.html">🛒</a>
+        </div>
+    </header>
+
+
+    <main>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+        <script src="./js/firebase-config.js"></script>
+        <script src="./js/account-menu.js"></script>
+        <section>
+            <h2>Novetats</h2>
+            <p>Nova taula de mescles JJ'S pro mix 9ch, per estudis reduit o amateur: </p>
+
+            <div class="carrusel">
+                <button class="slider-prev">◀</button>
+                <div class="slider-container">
+                    <img src="./assets/img/mesamezcalas.jpg" alt="Novetat 1" class="slider-image active">
+                    <img src="./assets/img/ChatGPT Image Dec 2, 2025, 01_45_00 PM.png" alt="Novetat 2" class="slider-image">
+                    <img src="./assets/img/ChatGPT Image Dec 2, 2025, 01_52_49 PM.png" alt="Novetat 3" class="slider-image">
+                    <img src="./assets/img/altavoces.jpg" alt="Novetat 4" class="slider-image">
+                    <img src="./assets/img/shure-sm58-lce.jpg" alt="Novetat 5" class="slider-image">
+                </div>
+                <button class="slider-next">▶</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Productes destacats</h2>
+
+            <div class="productes-grid">
+
+                <article>
+                    <img src="./assets/img/ChatGPT Image Dec 2, 2025, 01_45_00 PM.png" alt="Producte 1">
+                    <h3>Toca Discs JJ'Sound Systems Pro 56sm</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 49,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-1', 'Toca Discs JJ\'Sound Systems Pro 56sm', 49.99, './assets/img/ChatGPT Image Dec 2, 2025, 01_45_00 PM.png')">Comprar</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/ChatGPT Image Dec 2, 2025, 01_52_49 PM.png" alt="Producte 2">
+                    <h3>Terjeta de so JJ'S Sound Systems 2ch. Sistem vital energy amateur</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 89,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-2', 'Terjeta de so JJ\'S Sound Systems 2ch', 89.99, './assets/img/ChatGPT Image Dec 2, 2025, 01_52_49 PM.png')">Comprar</button>
+                </article>
+
+                <article class="esgotat">
+                    <img src="./assets/img/altavoces.jpg" alt="Producte 3">
+                    <h3>Alataveus JJ'S Sound Systems Pro initiator Concerts vitality 789</h3>
+                    <ul>
+                        <li>Stock: esgotat</li>
+                        <li>Preu: 129,99€</li>
+                    </ul>
+                    <button class="btn-compra" disabled>Esgotat</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/shure-sm58-lce.jpg" alt="Producte 4">
+                    <h3>Moicròfon shure 58sm</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 59,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-4', 'Moicròfon shure 58sm', 59.99, './assets/img/shure-sm58-lce.jpg')">Comprar</button>
+                </article>
+
+            </div>
+        </section>
+         <section>
+            <h2>Productes destacats i merchandaissing</h2>
+
+            <div class="productes-grid">
+
+                <article>
+                    <img src="./assets/img/auriculares.png" alt="Producte 1">
+                    <h3>Auriculares JJ'S Sound Systems Studio Monitor PRO</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 199,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-5', 'Auriculares JJ\'S Sound Systems Studio Monitor PRO', 199.99, './assets/img/auriculares.png')">Comprar</button>
+                </article>
+
+                <article class="esgotat">
+                    <img src="./assets/img/microfono.png" alt="Producte 2">
+                    <h3>Micrófono dinàmic JJ'S Sound Systems Studio</h3>
+                    <ul>
+                        <li>Stock: esgotat</li>
+                        <li>Preu: 79,99€</li>
+                    </ul>
+                    <button class="btn-compra" disabled>Esgotat</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/xlr.png" alt="Producte 3">
+                    <h3>Cable XLR professional JJ'S Sound Systems 10m</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 24,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-7', 'Cable XLR professional JJ\'S Sound Systems 10m', 24.99, './assets/img/xlr.png')">Comprar</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/shure-sm58-lce.jpg" alt="Producte 4">
+                    <h3>Moicròfon shure 58sm</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 59,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-4', 'Moicròfon shure 58sm', 59.99, './assets/img/shure-sm58-lce.jpg')">Comprar</button>
+                </article>
+
+            </div>
+        </section>
+         <section>
+            <h2>Productes destacats i merchandaissing</h2>
+
+            <div class="productes-grid">
+
+                <article>
+                    <img src="./assets/img/interfaceaudio.png" alt="Producte 1">
+                    <h3>Interface de audio USB JJ'S Sound Systems 4x4</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 149,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-8', 'Interface de audio USB JJ\'S Sound Systems 4x4', 149.99, './assets/img/interfaceaudio.png')">Comprar</button>
+                </article>
+
+                <article class="esgotat">
+                    <img src="./assets/img/microfonocondensadpr.png" alt="Producte 2">
+                    <h3>Micrófono condensador JJ'S Sound Systems C47</h3>
+                    <ul>
+                        <li>Stock: esgotat</li>
+                        <li>Preu: 139,99€</li>
+                    </ul>
+                    <button class="btn-compra" disabled>Esgotat</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/monitorstudio.png" alt="Producte 3">
+                    <h3>Atril de monitor de estudio JJ'S Sound Systems Pro</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 34,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-10', 'Atril de monitor de estudio JJ\'S Sound Systems Pro', 34.99, './assets/img/monitorstudio.png')">Comprar</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/equalizador.png" alt="Producte 4">
+                    <h3>Ecualizador gràfic JJ'S Sound Systems 10 bandas</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 89,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-11', 'Ecualizador gràfic JJ\'S Sound Systems 10 bandas', 89.99, './assets/img/equalizador.png')">Comprar</button>
+                </article>
+
+            </div>
+        </section>
+         <section>
+            <h2>Productes destacats i merchandaissing</h2>
+
+            <div class="productes-grid">
+
+                <article>
+                    <img src="./assets/img/espumaacustica.png" alt="Producte 1">
+                    <h3>Espuma acústica JJ'S Sound Systems 24 piezas</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 59,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-12', 'Espuma acústica JJ\'S Sound Systems 24 piezas', 59.99, './assets/img/espumaacustica.png')">Comprar</button>
+                </article>
+
+                <article class="esgotat">
+                    <img src="./assets/img/pedalcontrol.png" alt="Producte 2">
+                    <h3>Pedal de control para estudio JJ'S Sound Systems</h3>
+                    <ul>
+                        <li>Stock: esgotat</li>
+                        <li>Preu: 44,99€</li>
+                    </ul>
+                    <button class="btn-compra" disabled>Esgotat</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/microfonoinalambrico.png" alt="Producte 3">
+                    <h3>Micrófono inalámbrico JJ'S Sound Systems VHF</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 179,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-14', 'Micrófono inalámbrico JJ\'S Sound Systems VHF', 179.99, './assets/img/microfonoinalambrico.png')">Comprar</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/preamp.png" alt="Producte 4">
+                    <h3>Preamp de tubo JJ'S Sound Systems Vintage</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 299,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-15', 'Preamp de tubo JJ\'S Sound Systems Vintage', 299.99, './assets/img/preamp.png')">Comprar</button>
+                </article>
+
+            </div>
+        </section>
+         <section>
+            <h2>Productes destacats i merchandaissing</h2>
+
+            <div class="productes-grid">
+
+                <article>
+                    <img src="./assets/img/compressor.png" alt="Producte 1">
+                    <h3>Compresor de audio JJ'S Sound Systems Digital</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 199,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-16', 'Compresor de audio JJ\'S Sound Systems Digital', 199.99, './assets/img/compressor.png')">Comprar</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/pantallaacustica.png" alt="Producte 2">
+                    <h3>Pantalla acústica para micrófono JJ'S Sound Systems</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 29,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-17', 'Pantalla acústica para micrófono JJ\'S Sound Systems', 29.99, './assets/img/pantallaacustica.png')">Comprar</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/DAW.png" alt="Producte 3">
+                    <h3>Software DAW JJ'S Sound Systems Studio Pro</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 99,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-18', 'Software DAW JJ\'S Sound Systems Studio Pro', 99.99, './assets/img/DAW.png')">Comprar</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/entrada midiusb.png" alt="Producte 4">
+                    <h3>Entrada MIDI USB JJ'S Sound Systems Pro</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 69,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-19', 'Entrada MIDI USB JJ\'S Sound Systems Pro', 69.99, './assets/img/entrada midiusb.png')">Comprar</button>
+                </article>
+
+            </div>
+        </section>
+         <section>
+            <h2>Productes destacats i merchandaissing</h2>
+
+            <div class="productes-grid">
+
+                <article>
+                    <img src="./assets/img/jack 3.5.png" alt="Producte 1">
+                    <h3>Cable Jack 6.35mm TRS JJ'S Sound Systems 5m</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 19,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-20', 'Cable Jack 6.35mm TRS JJ\'S Sound Systems 5m', 19.99, './assets/img/jack 3.5.png')">Comprar</button>
+                </article>
+
+                <article class="esgotat">
+                    <img src="./assets/img/monitor 5''.png" alt="Producte 2">
+                    <h3>Monitor de estudio JJ'S Sound Systems 5"</h3>
+                    <ul>
+                        <li>Stock: esgotat</li>
+                        <li>Preu: 249,99€</li>
+                    </ul>
+                    <button class="btn-compra" disabled>Esgotat</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/Amplificador Auriculares.png" alt="Producte 3">
+                    <h3>Amplificador de auriculares JJ'S Sound Systems Portable</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 119,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-22', 'Amplificador de auriculares JJ\'S Sound Systems Portable', 119.99, './assets/img/Amplificador Auriculares.png')">Comprar</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/osciladorp.png" alt="Producte 4">
+                    <h3>Oscilador de prueba JJ'S Sound Systems Digital</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 79,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-23', 'Oscilador de prueba JJ\'S Sound Systems Digital', 79.99, './assets/img/osciladorp.png')">Comprar</button>
+                </article>
+
+            </div>
+        </section>
+         <section>
+            <h2>Productes destacats i merchandaissing</h2>
+
+            <div class="productes-grid">
+
+                <article>
+                    <img src="./assets/img/Pasted image.png" alt="Producte 1">
+                    <h3>Protector de picos JJ'S Sound Systems 8 tomas</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 39,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-24', 'Protector de picos JJ\'S Sound Systems 8 tomas', 39.99, './assets/img/Pasted image.png')">Comprar</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/auriculares.png" alt="Producte 2">
+                    <h3>Auriculares JJ'S Sound Systems Studio Monitor PRO</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 199,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-5', 'Auriculares JJ\'S Sound Systems Studio Monitor PRO', 199.99, './assets/img/auriculares.png')">Comprar</button>
+                </article>
+
+                <article class="esgotat">
+                    <img src="./assets/img/microfono.png" alt="Producte 3">
+                    <h3>Micrófono dinàmic JJ'S Sound Systems Studio</h3>
+                    <ul>
+                        <li>Stock: esgotat</li>
+                        <li>Preu: 79,99€</li>
+                    </ul>
+                    <button class="btn-compra" disabled>Esgotat</button>
+                </article>
+
+                <article>
+                    <img src="./assets/img/xlr.png" alt="Producte 4">
+                    <h3>Cable XLR professional JJ'S Sound Systems 10m</h3>
+                    <ul>
+                        <li>Stock: disponible</li>
+                        <li>Preu: 24,99€</li>
+                    </ul>
+                    <button class="btn-compra" onclick="agregarAlCarrito('prod-7', 'Cable XLR professional JJ\'S Sound Systems 10m', 24.99, './assets/img/xlr.png')">Comprar</button>
+                </article>
+
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <a href="./views/about.html">Sobre nosaltres ·</a> 
+        <a href="./views/contact.html">Contacte ·</a>
+        <a href="./views/privacy.html">Política de privacitat</a>
+    </footer>
+</body>
+</html>

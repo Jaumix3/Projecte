@@ -24,6 +24,13 @@ header img {
     cursor: pointer;
 }
 
+/* -------- LISTAS -------- */
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 a{
     text-decoration: none;
     color: #222;
@@ -34,6 +41,8 @@ main {
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 form {

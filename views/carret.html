@@ -5,53 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carret de compra</title>
     <link rel="stylesheet" href="../css/carret.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/carrito.js"></script>
 </head>
 
 <body>
     <header>
-        <img src="../assets/img/logo.png" alt="Logo">
-        <input type="search" placeholder="Cerca...">
-        <a href="./formulari.html">Iniciar sessió</a>
-        <a href="./index.html">
-        <img src="../assets/img/logo.png" alt="Logo JJ'S Sound Systems">
+        <a href="../index.html">
+            <img src="../assets/img/logo.png" alt="Logo JJ'S Sound Systems">
         </a>
+        <input type="search" placeholder="Cerca...">
+        <div class="icons">
+            <a href="./carret.html">🛒</a>
+        </div>
     </header>
 
     <main>
         <h1>Carret de compra</h1>
 
-        <section class="carret-llista">
-
-            <article>
-                <img src="../assets/img/ChatGPT Image Dec 2, 2025, 01_45_00 PM.png" alt="">
-                <div>
-                    <h3>Toca Discs JJ'Sound Systems Pro 56sm 98</h3>
-                    <p>Preu: 49,99€</p>
-                    <p>Quantitat: 1</p>
-                </div>
-            </article>
-
-            <article>
-                <img src="../assets/img/yamaha-ead10.jpg" alt="">
-                <div>
-                    <h3>yamaha-ead10 simple stack</h3>
-                    <p>Preu: 89,99€</p>
-                    <p>Quantitat: 2</p>
-                </div>
-            </article>
-
+        <section class="carret-llista" id="carritoLista">
+            <!-- Los artículos del carrito se cargarán aquí dinamicamente -->
         </section>
 
         <section class="total">
-            <h2>Total: 229,97€</h2>
-            <button>Finalitzar compra</button>
+            <h2>Total: <span id="totalPrecio">0,00€</span></h2>
+            <button onclick="limpiarCarrito()">Buidar carrito</button>
+            <button onclick="finalizarCompra()">Finalitzar compra</button>
         </section>
     </main>
 
-   <footer>
-        <a href="">Sobre nosaltres ·</a> 
-        <a href="">Contacte ·</a>
-        <a href="">Política de privacitat</a>
+    <footer>
+        <a href="./formulari.html">Sobre nosaltres ·</a> 
+        <a href="./formulari.html">Contacte ·</a>
+        <a href="./formulari.html">Política de privacitat</a>
     </footer>
 
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -59,5 +45,85 @@
     <script src="../js/firebase-config.js"></script>
     <script src="../js/account-menu.js"></script>
 
+    <script>
+        // Mostrar carrito al cargar la página
+        function mostrarCarrito() {
+            const items = carrito.obtener();
+            const contenedor = document.getElementById('carritoLista');
+            const totalPrecio = document.getElementById('totalPrecio');
+
+            contenedor.innerHTML = '';
+
+            if (items.length === 0) {
+                contenedor.innerHTML = '<p style="text-align: center; padding: 40px; color: #999;">El carrito está vacío</p>';
+                totalPrecio.textContent = '0,00€';
+                return;
+            }
+
+            items.forEach(item => {
+                const articulo = document.createElement('article');
+                articulo.innerHTML = `
+                    <img src="${item.imagen}" alt="${item.nombre}">
+                    <div>
+                        <h3>${item.nombre}</h3>
+                        <p>Preu: ${item.precio.toFixed(2)}€</p>
+                        <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                            <label for="cantidad-${item.id}">Quantitat:</label>
+                            <input type="number" id="cantidad-${item.id}" value="${item.cantidad}" min="1" 
+                                   onchange="actualizarCantidad('${item.id}', this.value)" 
+                                   style="width: 60px; padding: 6px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                            <span>Subtotal: ${(item.precio * item.cantidad).toFixed(2)}€</span>
+                            <button onclick="eliminarDelCarrito('${item.id}')" 
+                                    style="background: #ef4444; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-weight: 600;">
+                                Eliminar
+                            </button>
+                        </div>
+                    </div>
+                `;
+                contenedor.appendChild(articulo);
+            });
+
+            totalPrecio.textContent = carrito.total() + '€';
+        }
+
+        // Actualizar cantidad de un producto
+        function actualizarCantidad(id, cantidad) {
+            cantidad = parseInt(cantidad);
+            if (cantidad > 0) {
+                carrito.actualizar(id, cantidad);
+                mostrarCarrito();
+            } else {
+                alert('La cantidad debe ser mayor que 0');
+            }
+        }
+
+        // Eliminar producto del carrito
+        function eliminarDelCarrito(id) {
+            carrito.eliminar(id);
+            mostrarCarrito();
+        }
+
+        // Limpiar todo el carrito
+        function limpiarCarrito() {
+            if (confirm('¿Estás seguro de que quieres vaciar el carrito?')) {
+                carrito.limpiar();
+                mostrarCarrito();
+            }
+        }
+
+        // Finalizar compra
+        function finalizarCompra() {
+            if (carrito.obtener().length === 0) {
+                alert('El carrito está vacío');
+                return;
+            }
+            alert('¡Compra realizada! Gracias por tu compra.');
+            carrito.limpiar();
+            mostrarCarrito();
+        }
+
+        // Mostrar carrito al cargar
+        document.addEventListener('DOMContentLoaded', mostrarCarrito);
+    </script>
 </body>
 </html>

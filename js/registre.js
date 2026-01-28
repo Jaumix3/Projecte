@@ -27,7 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
         await user.updateProfile({ displayName: name });
       }
       alert("Registre completat. S'ha iniciat la sessió.");
-      window.location.href = './index.html';
+      // Redirigir a index.html desde cualquier ubicación
+      const isInViews = window.location.pathname.includes('/views/');
+      window.location.href = isInViews ? '../index.html' : './index.html';
     } catch (err) {
       console.error(err);
       alert('Error en registrar: ' + (err.message || err));

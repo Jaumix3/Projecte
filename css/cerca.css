@@ -32,9 +32,10 @@ header input[type="search"] {
     border-radius: 6px;
 }
 
-/* -------- CONTINGUT -------- */
 main {
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .resultats {
@@ -68,6 +69,13 @@ main {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* -------- LISTAS -------- */
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 a{

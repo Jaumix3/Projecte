@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del producto - JJ'S Sound Systems</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/product-detail.css">
+</head>
+<script src="../js/cerca.js"></script>
+<body>
+    <header>
+        <a href="../index.html">
+        <img src="../assets/img/logo.png" alt="Logo de JJ'S Sound Systems">
+        </a>
+
+        <nav>
+            <a href="../index.html">Inicio</a>
+        </nav>
+
+        <input type="search" id="cerca" placeholder="Buscar productos...">
+
+        <div class="icons">
+            <a href="./carret.html">🛒</a>
+        </div>
+    </header>
+
+    <main>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/account-menu.js"></script>
+
+        <button class="btn-back" onclick="window.history.back()">← Volver</button>
+
+        <section class="product-detail-section">
+            <div class="product-detail-container">
+                <div class="product-image-container">
+                    <img id="product-image" src="" alt="Producte" class="product-detail-image">
+                </div>
+
+                <div class="product-info-container">
+                    <h1 id="product-name"></h1>
+                    
+                    <div class="product-stock">
+                        <p id="product-stock"></p>
+                    </div>
+
+                    <div class="product-price">
+                        <p>Precio: <span id="product-price"></span> €</p>
+                    </div>
+
+                    <div class="product-description">
+                        <h3>Descripción</h3>
+                        <p id="product-description"></p>
+                    </div>
+
+                    <div class="product-specs">
+                        <h3>Especificaciones</h3>
+                        <ul id="product-specs-list">
+                        </ul>
+                    </div>
+
+                    <div class="product-actions">
+                        <label for="quantity" class="sr-only">Cantidad</label>
+                        <input type="number" id="quantity" min="1" value="1" class="quantity-input">
+                        <button id="btn-compra" class="btn-compra-detail">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/product-detail.js"></script>
+</body>
+</html>

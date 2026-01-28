@@ -8,15 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.createElement('div');
     container.className = 'account-menu';
 
+    // Detectar si estamos en views/ o en la raíz
+    const isInViews = window.location.pathname.includes('/views/');
+    const comptePath = isInViews ? './compte.html' : './views/compte.html';
+    const formulariPath = isInViews ? './formulari.html' : './views/formulari.html';
+
     if (user) {
       const name = user.displayName || user.email || 'Usuari';
       container.innerHTML = `
         <span class="account-name">${name}</span>
-        <a href="/views/compte.html">Perfil</a>
+        <a href="${comptePath}">Perfil</a>
         <a href="#" id="menuSignOut">Tancar sessió</a>
       `;
     } else {
-      container.innerHTML = `<a href="./formulari.html">Iniciar sessió</a>`;
+      container.innerHTML = `<a href="${formulariPath}">Iniciar sessió</a>`;
     }
 
     if (nav) nav.appendChild(container);

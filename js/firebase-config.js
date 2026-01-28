@@ -12,10 +12,8 @@
 
 firebase.initializeApp(firebaseConfig);
 
-// Shortcut to auth
 const auth = firebase.auth();
 
-// Initialize Firestore if available (pages that need it should load the SDK)
 let db = null;
 if (firebase.firestore) {
   try {

@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       await firebase.auth().signInWithEmailAndPassword(email, password);
       alert('Sessió iniciada.');
-      window.location.href = './index.html';
+      // Redirigir a index.html desde cualquier ubicación
+      const isInViews = window.location.pathname.includes('/views/');
+      window.location.href = isInViews ? '../index.html' : './index.html';
     } catch (err) {
       console.error(err);
       alert('Error iniciant sessió: ' + (err.message || err));
